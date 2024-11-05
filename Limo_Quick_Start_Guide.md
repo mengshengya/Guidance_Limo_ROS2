@@ -27,6 +27,8 @@ Select to save the password.
 
 Always select the default option : OK.
 
+
+
 ## How to use LiDAR
 Launch a new terminal and enter the command:
 
@@ -121,6 +123,26 @@ ros2 launch limo_base limo_base.launch.py
 
 **Without root, there is a error about USB port, as shown in the following**
 ![](./Limo_image/base_error.png)
+
+### 
+
+You can control the forward movement of limo with a simple command.
+
+1. Launch the chassis, open a terminal, and enter the command in the terminal:
+
+```
+ros2 launch limo_base limo_base.launch.py
+```
+
+2. Launch keyboard control node:
+
+```
+ros2 run teleop_twist_keyboard teleop_twist_keyboard 
+```
+Note: When the vehicle cannot go straight in Ackermann mode, the steering gear calibration is required.
+
+
+
 
 #### Start the Navigation
 
