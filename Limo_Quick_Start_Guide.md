@@ -48,8 +48,11 @@ Launch a new terminal and enter the command:
 ```
 ros2 launch ydlidar_ros2_driver ydlidar.launch.py
 ```
+### Navigation
 
-### Using Cartographer mapping
+## 1 . LiDAR Mapping :  need a map prebuild , so we get that by using lidar
+
+# Cartographer mapping
 First, start the LiDAR. Launch a new terminal and enter the command:
 
 ```
@@ -62,8 +65,7 @@ Then start the cartographer mapping algorithm. Open another new terminal and ent
 ros2 launch limo_bringup limo_cartographer.launch.py
 ```
 
-
-### 6.4 Rtabmap algorithm navigation
+## 2.  Rtabmap algorithm navigation : We use that map that build in step 1 to navigation 
 > **Note:** Before running the command, please make sure that the programs in other terminals have been terminated. The termination command is: Ctrl+c.
 
 （1）First launch the LiDAR. Enter the command in the terminal:
