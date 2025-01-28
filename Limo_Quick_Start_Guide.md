@@ -164,3 +164,22 @@ Note: When the vehicle cannot go straight in Ackermann mode, the steering gear c
 ```
 ros2 launch limo_bringup navigation_launch.py
 ```
+
+
+### Build - and test HUY package 
+```
+colcon build --packages-select limo_nav_huy_test
+```
+run the scritp
+```
+ros2 launch limo_bringup limo_start.launch.py
+```
+
+```
+ros2 launch limo_bringup limo_nav2_diff.launch.py
+```
+
+```
+ros2 run limo_nav_huy_test wandering
+```
+
