@@ -28,6 +28,19 @@ Select to save the password.
 Always select the default option : OK.
 
 
+## Limo topic
+In ROS 2, topic is a common communication mechanism used to transmit messages between ROS 2 nodes. It adopts a publish-subscribe (Publish-Subscribe) model, in which one node publishes messages to a specific topic, and other nodes subscribe to the topic to receive messages.
+
+Start the Limo chassis driver:
+
+```
+ros2 launch limo_base limo_base.launch.py
+```
+## Launch keyboard control node.
+```
+ros2 run teleop_twist_keyboard teleop_twist_keyboard 
+```
+
 
 ## How to use LiDAR
 Launch a new terminal and enter the command:
