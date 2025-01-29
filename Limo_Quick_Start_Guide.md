@@ -86,6 +86,8 @@ Fixed Frame
 Frame [map] does not exist 
 ```
 the problem may be power supply , try to reset , and make sur LIMO have enough power supplie
+OR watch this youtub video 
+https://youtu.be/idQb2pB-h2Q?si=dsLWrFBS3_vXXCle&t=2193
 
 ### Navigation
 
