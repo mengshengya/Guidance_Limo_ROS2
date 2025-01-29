@@ -176,7 +176,7 @@ ros2 launch limo_bringup limo_start.launch.py
 ```
 
 ```
-ros2 launch limo_bringup limo_nav2_diff.launch.py
+ros2 launch limo_bringup limo_nav2.launch.py
 ```
 
 ```
