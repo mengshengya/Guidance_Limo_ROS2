@@ -28,70 +28,8 @@ Select to save the password.
 Always select the default option : OK.
 
 
-## Limo topic
+### Limo Basic
 In ROS 2, topic is a common communication mechanism used to transmit messages between ROS 2 nodes. It adopts a publish-subscribe (Publish-Subscribe) model, in which one node publishes messages to a specific topic, and other nodes subscribe to the topic to receive messages.
-
-Start the Limo chassis driver:
-
-```
-ros2 launch limo_base limo_base.launch.py
-```
-## Launch keyboard control node.
-```
-ros2 run teleop_twist_keyboard teleop_twist_keyboard 
-```
-
-
-## How to use LiDAR
-Launch a new terminal and enter the command:
-
-```
-ros2 launch ydlidar_ros2_driver ydlidar.launch.py
-```
-### Navigation
-
-## 1 . LiDAR Mapping :  need a map prebuild , so we get that by using lidar
-
-# Cartographer mapping
-First, start the LiDAR. Launch a new terminal and enter the command:
-
-```
-ros2 launch limo_bringup limo_start.launch.py
-```
-
-Then start the cartographer mapping algorithm. Open another new terminal and enter the command:
-
-```
-ros2 launch limo_bringup limo_cartographer.launch.py
-```
-
-## 2.  Rtabmap algorithm navigation : We use that map that build in step 1 to navigation 
-> **Note:** Before running the command, please make sure that the programs in other terminals have been terminated. The termination command is: Ctrl+c.
-
-（1）First launch the LiDAR. Enter the command in the terminal:
-
-```
-ros2 launch limo_bringup limo_start.launch.py
-```
-
-（2）Launch the camera. Enter the command in the terminal:
-
-```
-ros2 launch astra_camera dabai.launch.py
-```
-
-（3）Start the mapping mode of rtabmap algorithm. Enter the command in the terminal:
-
-```
-ros2 launch limo_bringup limo_rtab_rgbd.launch.py localization:=true
-```
-
-（4）Start the navigation algorithm. Enter the command in the terminal:
-
-```
-ros2 launch limo_bringup limo_rtab_nav2.launch.py
-```
-
 ## Chassis Driver File
 
 The mobile chassis needs to be driven by a program to achieve the navigation of Limo.  
@@ -118,6 +56,82 @@ cd ~/agilex_ws/src/limo_ros2/limo_base
 #### Start the Limo chassis driver:
 **Note:** Before running the command, please make sure that the programs in other terminals have been terminated. The termination command is: Ctrl+c
 
+## Basic 1 Launch keyboard control node.
+
+1.Start the Limo chassis driver:
+
+```
+ros2 launch limo_base limo_base.launch.py
+```
+2. Launch keyboard control node:
+You can control the forward movement of limo with a simple command.
+
+```
+ros2 run teleop_twist_keyboard teleop_twist_keyboard 
+```
+Note: When the vehicle cannot go straight in Ackermann mode, the steering gear calibration is required.
+
+
+## Basic 2 : How to use LiDAR
+Launch a new terminal and enter the command:
+
+```
+ros2 launch ydlidar_ros2_driver ydlidar.launch.py
+```
+
+### NOTE : if the RVIZ have some issue like that  
+```
+Global Status: Error
+Fixed Frame
+Frame [map] does not exist 
+```
+the problem may be power supply , try to reset , and make sur LIMO have enough power supplie
+
+### Navigation
+
+## Navigation 1. LiDAR Mapping :  need a map prebuild , so we get that by using lidar
+
+Cartographer mapping :First, start the LiDAR. Launch a new terminal and enter the command:
+
+```
+ros2 launch limo_bringup limo_start.launch.py
+```
+
+Then start the cartographer mapping algorithm. Open another new terminal and enter the command:
+
+```
+ros2 launch limo_bringup limo_cartographer.launch.py
+```
+
+# Navigation 2.  Rtabmap algorithm navigation : We use that map that build in step 1 to navigation 
+> **Note:** Before running the command, please make sure that the programs in other terminals have been terminated. The termination command is: Ctrl+c.
+
+（1）First launch the LiDAR. Enter the command in the terminal:
+
+```
+ros2 launch limo_bringup limo_start.launch.py
+```
+
+（2）Launch the camera. Enter the command in the terminal:
+
+```
+ros2 launch astra_camera dabai.launch.py
+```
+
+（3）Start the mapping mode of rtabmap algorithm. Enter the command in the terminal:
+
+```
+ros2 launch limo_bringup limo_rtab_rgbd.launch.py localization:=true
+```
+
+（4）Start the navigation algorithm. Enter the command in the terminal:
+
+```
+ros2 launch limo_bringup limo_rtab_nav2.launch.py
+```
+
+
+
 (1) Get the root. 
     Enter the command in the terminal:
 
@@ -141,20 +155,7 @@ ros2 launch limo_base limo_base.launch.py
 
 ### 
 
-You can control the forward movement of limo with a simple command.
 
-1. Launch the chassis, open a terminal, and enter the command in the terminal:
-
-```
-ros2 launch limo_base limo_base.launch.py
-```
-
-2. Launch keyboard control node:
-
-```
-ros2 run teleop_twist_keyboard teleop_twist_keyboard 
-```
-Note: When the vehicle cannot go straight in Ackermann mode, the steering gear calibration is required.
 
 
 
